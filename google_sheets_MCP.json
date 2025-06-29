@@ -1,0 +1,316 @@
+{
+  "name": "google sheets MCP",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "9a714556-8382-43bb-999b-4e68e7d32b7e"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ce96a79d-a4b4-4957-8465-e5bb1f60e3d7",
+      "name": "MCP Server Trigger",
+      "webhookId": "9a714556-8382-43bb-999b-4e68e7d32b7e"
+    },
+    {
+      "parameters": {
+        "description": "Retrieving rows from a google sheet",
+        "workflowId": {
+          "__rl": true,
+          "value": "1bnrPIX4a8NQJFRR",
+          "mode": "list",
+          "cachedResultName": "AI Agent — row lookup"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query_value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query_value', ``, 'string') }}",
+            "query_column": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('query_column', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query_column",
+              "displayName": "query_column",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "query_value",
+              "displayName": "query_value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        240
+      ],
+      "id": "906ddfad-861e-472e-8915-e74d337367d4",
+      "name": "Call n8n Workflow Tool"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1T7HsZ5sRwkftTzUMCsqyOsHHJBCPG6zAbCxfB9r6ch8",
+          "mode": "list",
+          "cachedResultName": "titanicdata",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1T7HsZ5sRwkftTzUMCsqyOsHHJBCPG6zAbCxfB9r6ch8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "الورقة1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1T7HsZ5sRwkftTzUMCsqyOsHHJBCPG6zAbCxfB9r6ch8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('row_number__using_to_match_', ``, 'string') }}",
+            "pclass": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('pclass', ``, 'string') }}",
+            "survived": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('survived', ``, 'string') }}",
+            "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('name', ``, 'string') }}",
+            "sex": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('sex', ``, 'string') }}",
+            "age": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('age', ``, 'string') }}",
+            "sibsp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('sibsp', ``, 'string') }}",
+            "parch": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parch', ``, 'string') }}",
+            "ticket": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ticket', ``, 'string') }}",
+            "fare": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('fare', ``, 'string') }}",
+            "cabin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('cabin', ``, 'string') }}",
+            "embarked": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('embarked', ``, 'string') }}",
+            "boat": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('boat', ``, 'string') }}",
+            "body": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('body', ``, 'string') }}",
+            "home.dest": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('home_dest', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "pclass",
+              "displayName": "pclass",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "survived",
+              "displayName": "survived",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "sex",
+              "displayName": "sex",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "age",
+              "displayName": "age",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "sibsp",
+              "displayName": "sibsp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "parch",
+              "displayName": "parch",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ticket",
+              "displayName": "ticket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fare",
+              "displayName": "fare",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cabin",
+              "displayName": "cabin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "embarked",
+              "displayName": "embarked",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "boat",
+              "displayName": "boat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "body",
+              "displayName": "body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "home.dest",
+              "displayName": "home.dest",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        100,
+        220
+      ],
+      "id": "df5c5450-1c5d-47c7-9050-2f7d171b0ff1",
+      "name": "Update row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JeHZgZkaOF1BFHi8",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Call n8n Workflow Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9fa8e76c-6907-40a7-8d53-d461ca51dcec",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "07e704f71135ded0241a99635143a013648aba3859501d2ae808f0a2e753d262"
+  },
+  "id": "l9dSnryPmH2ciQhI",
+  "tags": []
+}
